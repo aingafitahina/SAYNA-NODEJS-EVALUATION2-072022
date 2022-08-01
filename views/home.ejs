@@ -13,7 +13,7 @@
             <div class ="menu"> 
                 <ul>
                     <li class="logo"> <img src="/public/image/sayna.jpg"> </li>
-                    <li>Home</li>
+                    <li><a href="/home"></a>Home</li>
                     <li><a href="/backend">backend</a></li>
                     <li><a href="/frontend">FrontEnd</a></li>
                     <li><a href="/marketing">Marketing Digital</a></li>
@@ -46,9 +46,37 @@
 					  <div class="flip-box-inner">
 						<div class="flip-box-front">
 						  <h2>Les meilleures notes des formations</h2>
+						  <% for(singletopavis of avis) {%>
+                            <div>
+                                <p class="note">Note:
+                                    <%= singletopavis.note %>
+                                </p>
+                                <%= singletopavis.avis %> <br> <br>
+                                    <p class="author">Author:
+                                        <%= singletopavis.firstname %>
+                                            <%= singletopavis.lastname %>
+                                    </p>
+
+
+                            </div>
+                            <% } %>
 						</div>
 						<div class="flip-box-back">
 						  <h2>Suite</h2>
+						  <% for(singletopavis of avis1) {%>
+                            <div>
+                                <p class="note">Note:
+                                    <%= singletopavis.note %>
+                                </p>
+                                <%= singletopavis.avis %> <br> <br>
+                                    <p class="author">Author:
+                                        <%= singletopavis.firstname %>
+                                            <%= singletopavis.lastname %>
+                                    </p>
+
+
+                            </div>
+                            <% } %>
 						</div>
 					  </div>
 					</div>

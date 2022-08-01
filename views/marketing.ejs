@@ -34,7 +34,7 @@
 						</div>
 				</div>
 
-				<div class="app-picture-frontend" >
+				<div class="app-picture-marketing" >
 					<img src="/public/image/image_marketing.jpg">
 				</div>
 
@@ -45,6 +45,20 @@
 				<div class="flip-box-inner">
 				<div class="flip-box-front">
 					<h2>Avis des utilisateurs sur le frontend</h2>
+					<% for(commentaire of avis) {%>
+						<div>
+							<p class="note">Note:
+								<%= commentaire.note %>
+							</p>
+							<%= commentaire.avis %> <br> <br>
+								<p class="author">Author:
+									<%= commentaire.firstname %>
+										<%= commentaire.lastname %>
+								</p>
+
+
+						</div>
+						<% } %>
 				</div>
 				<div class="flip-box-back">
 					<h2>Suite</h2>

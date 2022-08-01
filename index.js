@@ -24,8 +24,11 @@
     
 
     //mettre la page 'home' dans views comme page principale
-    app.get('/',function(req,res){
-      res.render('home')
+    app.get('/home', async function(req,res){
+      const avis =await indice(bestcomment[0])
+      const avis1 =await indice(bestcomment[1])
+
+      res.render('home',{avis:avis, avis1: avis1})
 
     })
 
@@ -52,10 +55,10 @@
         //       let sql = "SELECT *FROM commentaire where formation_typeformation='backend'ORDER BY note DESC  LIMIT 1 OFFSET 0";
         // connection.query(sql,insertquery,(err,rows)=>{
         //    if(err) throw err 
-        //    res.render('backend',{
-        //    commentaire:rows});
+        // //    res.render('backend',{
+        // //    commentaire:rows});
 
-        // })
+        //  })
       const avis_backend = await indice(queryback[0])
       const avis_backend1 = await indice(queryback[1])
       const avis_backend2 = await indice(queryback[2])
@@ -67,8 +70,13 @@
     })
 
 
-    app.get('/marketing', function(req,res){
-      res.render('marketing')
+    app.get('/marketing', async function(req,res){
+      const avis_marketing = await indice(querymarketing[0])
+      const avis_marketing1 = await indice(querymarketing[1])
+      const avis_marketing2 = await indice(querymarketing[2])
+      const avis_marketing3 = await indice(querymarketing[3])
+  
+      res.render('frontend', { avis: avis_marketing, avis1: avis_marketing1, avis2: avis_marketing2, avis3: avis_marketing3})
     })
 
 
